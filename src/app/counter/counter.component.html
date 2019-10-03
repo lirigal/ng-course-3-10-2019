@@ -1,0 +1,22 @@
+<div class="layout">
+
+    <button
+        [disabled]="value > 10" 
+        (click)="increase()">
+        +
+    </button>
+
+    <span class="value" [ngClass]="{
+        even : value % 2 === 0,
+        odd  : value % 2 !== 0
+    }">
+        {{value}}
+    </span>
+
+    <button
+        [disabled]="value < 0" 
+        (click)=decrease()>
+        -
+    </button>
+
+</div>
