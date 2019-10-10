@@ -4,10 +4,13 @@ import { Component, OnInit, ContentChildren, QueryList } from '@angular/core';
 @Component({
   selector: 'ev-tabs',
   template: `
-    <div>
+    <div class="tabs-layout">
       <div class="tabs">
-        <span *ngFor="let panel of panels">
-          <a href="#" (click)="setActive(panel)">{{panel.title}}</a> |
+        <span *ngFor="let panel of panels"
+              (click)="setActive(panel)"
+              [class.active]="panel.active"
+              >
+          {{panel.title}}
         </span>
       </div>
       <div class="panels">
