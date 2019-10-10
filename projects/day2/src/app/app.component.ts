@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
       <h1>Day 2</h1>
       <ev-tabs>
         <ev-panel title="counter">
-
+          aaaa   
         </ev-panel>
         <ev-panel title="tab 1">
           <h3> Tab 2</h3>

@@ -4,7 +4,8 @@ import { Component, OnInit, Input } from '@angular/core';
   selector: 'ev-panel',
   template: `
    <p>
-  		panel Works! - {{title}}
+      panel Works! - {{title}}
+      <ng-content></ng-content>
    </p>
   `,
   styles: []

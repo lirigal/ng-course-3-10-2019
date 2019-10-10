@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <p>
       tabs works!
+      <ng-content></ng-content>
     </p>
   `,
   styles: []
