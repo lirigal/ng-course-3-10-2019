@@ -1,15 +1,21 @@
 import { PanelComponent } from './panel.component';
-import { Component, OnInit, ContentChildren, QueryList } from '@angular/core';
+import { Component, OnInit, ContentChildren, QueryList, ContentChild, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'ev-tabs',
   template: `
     <div class="tabs-layout">
       <div class="tabs">
-        <span *ngFor="let panel of panels"
+        <span *ngFor="let panel of panels;index as i"
               (click)="setActive(panel)"
               [class.active]="panel.active">
-          {{panel.title}}
+          
+              <span *ngIf="!tabTemplate; else temp">{{panel.title}}</span>
+              <ng-template #temp>
+                <ng-container *ngTemplateOutlet="tabTemplate; context: {ctx : {title:panel.title,index:i} }"></ng-container>
+              </ng-template>
+          
+              
         </span>
       </div>
       <div class="panels">
@@ -20,6 +26,8 @@ import { Component, OnInit, ContentChildren, QueryList } from '@angular/core';
   styles: []
 })
 export class TabsComponent implements OnInit {
+
+  @ContentChild('tabTemplate' , {read:TemplateRef, static:true} ) tabTemplate;
 
   @ContentChildren(PanelComponent) panels:QueryList<PanelComponent>;
 

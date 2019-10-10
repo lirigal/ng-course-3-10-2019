@@ -30,9 +30,7 @@
 }
 .expander{
     display: grid;
-    grid-auto-rows: 35px auto;
-    grid-area: '
-        header
-        main
-    ';
+    grid-auto-rows: 35px auto;    
+    padding: 3px;
+    border: 1px darkgrey solid;
 }

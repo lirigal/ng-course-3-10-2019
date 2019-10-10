@@ -37,6 +37,11 @@ import { Component } from '@angular/core';
 <hr>
 
       <ev-tabs>
+
+        <ng-template #tabTemplate let-context="ctx">
+          !!! {{context.title}} - ({{context.index}})
+        </ng-template>
+
         <ev-panel title="counter" [active]="true">
           aaaa   
         </ev-panel>
@@ -62,5 +67,5 @@ import { Component } from '@angular/core';
   styles: []
 })
 export class AppComponent {
-  title = 'day2';
+
 }
