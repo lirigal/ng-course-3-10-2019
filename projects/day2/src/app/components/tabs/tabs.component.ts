@@ -1,5 +1,6 @@
 import { PanelComponent } from './panel.component';
 import { Component, OnInit, ContentChildren, QueryList, ContentChild, TemplateRef } from '@angular/core';
+import { TabHeaderComponent } from './tab-header.component';
 
 @Component({
   selector: 'ev-tabs',
@@ -13,6 +14,7 @@ import { Component, OnInit, ContentChildren, QueryList, ContentChild, TemplateRe
               <span *ngIf="!tabTemplate; else temp">{{panel.title}}</span>
               <ng-template #temp>
                 <ng-container *ngTemplateOutlet="tabTemplate; context: {ctx : {title:panel.title,index:i} }"></ng-container>
+                <ng-container *ngComponentOutlet="tabHeaderComponent"></ng-container>
               </ng-template>
           
               
@@ -28,6 +30,7 @@ import { Component, OnInit, ContentChildren, QueryList, ContentChild, TemplateRe
 export class TabsComponent implements OnInit {
 
   @ContentChild('tabTemplate' , {read:TemplateRef, static:true} ) tabTemplate;
+  @ContentChild( TabHeaderComponent, { static:true} ) tabHeaderComponent;
 
   @ContentChildren(PanelComponent) panels:QueryList<PanelComponent>;
 

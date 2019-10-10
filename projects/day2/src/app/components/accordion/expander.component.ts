@@ -6,8 +6,8 @@ let count = 1;
   selector: 'ev-expander',
   template: `
    <div class="expander">
-    <div class="header" (click)="toggle()">{{title}}</div>
-    <div class="main" *ngIf="open">
+    <div class="expander-header" (click)="toggle()">{{title}}</div>
+    <div class="expander-main" *ngIf="open">
       <ng-content></ng-content>
     </div>
    </div>

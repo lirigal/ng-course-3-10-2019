@@ -6,7 +6,18 @@ import { Component } from '@angular/core';
     <div>
       <h1>Day 2</h1>
 
-      <ev-accordion>
+      <ev-tabs>
+
+        <ng-template #tabTemplate let-context="ctx">
+          !!! {{context.title}} - ({{context.index}})
+        </ng-template>
+
+        <ev-tab-header>
+          +++++ {{foo}} ++++
+        </ev-tab-header>
+
+        <ev-panel title="accordion" [active]="true">
+        <ev-accordion>
 
         <ev-expander title="bla bla demo">
           BLA BLA BLA
@@ -29,21 +40,7 @@ import { Component } from '@angular/core';
           </ev-tabs>
         </ev-expander>
         
-      </ev-accordion>
-
-<hr>
-<hr>
-<hr>
-<hr>
-
-      <ev-tabs>
-
-        <ng-template #tabTemplate let-context="ctx">
-          !!! {{context.title}} - ({{context.index}})
-        </ng-template>
-
-        <ev-panel title="counter" [active]="true">
-          aaaa   
+      </ev-accordion>   
         </ev-panel>
         <ev-panel title="tab 2">
           <h3> Tab 2</h3>
@@ -67,5 +64,5 @@ import { Component } from '@angular/core';
   styles: []
 })
 export class AppComponent {
-
+  foo = "foo method demo"
 }

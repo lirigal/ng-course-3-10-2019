@@ -3,15 +3,18 @@ import { CommonModule } from '@angular/common';
 
 import { TabsComponent } from './tabs.component';
 import { PanelComponent } from './panel.component';
+import { TabHeaderComponent } from './tab-header.component';
 
 @NgModule({
   declarations: [
     TabsComponent,
-    PanelComponent
+    PanelComponent,
+    TabHeaderComponent
   ],
   exports: [
     TabsComponent,
-    PanelComponent
+    PanelComponent,
+    TabHeaderComponent
   ],
   imports: [
     CommonModule
