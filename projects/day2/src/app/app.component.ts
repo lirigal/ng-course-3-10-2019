@@ -9,8 +9,11 @@ import { Component } from '@angular/core';
         <ev-panel title="counter">
           aaaa   
         </ev-panel>
-        <ev-panel title="tab 1">
+        <ev-panel title="tab 2">
           <h3> Tab 2</h3>
+        </ev-panel>
+        <ev-panel title="tab 3">
+          <h3>Demossss....</h3>
         </ev-panel>
       </ev-tabs>
     </div>
