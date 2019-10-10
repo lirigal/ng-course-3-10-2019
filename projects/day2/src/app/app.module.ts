@@ -1,18 +1,20 @@
+import { TabsModule } from './components/tabs/tabs.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { TabsComponent } from './tabs.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    TabsComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+   declarations: [
+      AppComponent,     
+   ],
+   imports: [
+      BrowserModule,
+      TabsModule
+   ],
+   providers: [],
+   bootstrap: [
+      AppComponent
+   ]
 })
 export class AppModule { }

@@ -20,7 +20,7 @@
       },
       "root": "projects/day2",
       "sourceRoot": "projects/day2/src",
-      "prefix": "app",
+      "prefix": "ev",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",

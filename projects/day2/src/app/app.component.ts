@@ -5,7 +5,14 @@ import { Component } from '@angular/core';
   template: `
     <div>
       <h1>Day 2</h1>
-      
+      <ev-tabs>
+        <ev-panel title="counter">
+
+        </ev-panel>
+        <ev-panel title="tab 1">
+          <h3> Tab 2</h3>
+        </ev-panel>
+      </ev-tabs>
     </div>
   `,
   styles: []

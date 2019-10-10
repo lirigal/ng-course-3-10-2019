@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-tabs',
+  selector: 'ev-tabs',
   template: `
     <p>
       tabs works!
