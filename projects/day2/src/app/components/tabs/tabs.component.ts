@@ -8,8 +8,7 @@ import { Component, OnInit, ContentChildren, QueryList } from '@angular/core';
       <div class="tabs">
         <span *ngFor="let panel of panels"
               (click)="setActive(panel)"
-              [class.active]="panel.active"
-              >
+              [class.active]="panel.active">
           {{panel.title}}
         </span>
       </div>

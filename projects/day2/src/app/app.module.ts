@@ -1,3 +1,4 @@
+import { AccordionModule } from './components/accordion/accordion.module';
 import { TabsModule } from './components/tabs/tabs.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -9,8 +10,12 @@ import { AppComponent } from './app.component';
       AppComponent,     
    ],
    imports: [
+      // Angular Modules
       BrowserModule,
-      TabsModule
+      
+      // My Modules
+      TabsModule,
+      AccordionModule
    ],
    providers: [],
    bootstrap: [
