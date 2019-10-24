@@ -1,4 +1,5 @@
 import { zip, Subject } from 'rxjs';
+import { map, switchMap, tap } from 'rxjs/operators';
 
 export class Proxy2{
 
@@ -6,18 +7,19 @@ export class Proxy2{
     result2 = new Subject();
 
     constructor(){
-        this.result2.pipe(
-            switchMap( data => {
-                return  zip(
-                    this.http.post('',data).pipe(
-                        tap( resp => this.result.next(resp))
-                    ),
-                    this.result
-                )
-            })
+        this.result.next('start');
+        
+        zip(this.result2,this.result).pipe(
+            map( zip => zip.data),
+            switchMap( data => this.http.post('',data) ),
+            tap( resp => this.result.next(resp))
         )
+        
     }
 
+    save(data){
+        this.result2.next(data);
+    }
 
     serverSave(data){
         zip(
